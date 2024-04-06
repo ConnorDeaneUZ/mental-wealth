@@ -1,6 +1,5 @@
 <template>
-  <div>mental wealth</div>
-
+  <h2>Mental Wealth</h2>
   <div v-for="(item, index) in entries" :key="index">
     <p>{{ item.entry }}</p>
 
