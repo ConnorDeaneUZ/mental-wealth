@@ -1,13 +1,14 @@
 <template>
-  <div class="bg-[#f9f9f9] w-full">
+  <div class="bg-[#f9f9f9] w-full flex space-x-8">
+    <new-feed-card />
     <div v-for="(item, index) in entries" :key="index">
-      <p>{{ item.entry }}</p>
+      <feed-card />
 
       <button @click="deletePost(item.id)">delete</button>
     </div>
 
-    <input type="text" v-model="newMessage" />
-    <button @click="insertData()">post</button>
+    <!-- <input type="text" v-model="newMessage" />
+    <button @click="insertData()">post</button> -->
   </div>
 </template>
 

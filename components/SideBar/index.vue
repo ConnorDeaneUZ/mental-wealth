@@ -1,7 +1,9 @@
 <template>
   <div class="relative bg-green-300 h-full w-[30px]"></div>
-  <div class="relative z-10 h-full w-[300px] right-side-shadow">
-    <h2>Mental Wealth</h2>
+  <div
+    class="relative z-10 h-full w-[300px] right-side-shadow flex flex-col items-center"
+  >
+    <img class="h-28" src="/logo.png" />
   </div>
 </template>
 
