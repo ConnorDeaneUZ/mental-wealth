@@ -1,75 +1,12 @@
-# Nuxt 3 Minimal Starter
+# Mental Wealth
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Welcome to Mental Wealth, a comprehensive web application dedicated to fostering mental health and well-being. MentalWealth offers users a serene platform for journaling, tracking mood and mental states, and discovering resources for maintaining mental wellness. Built with Vue 3, Nuxt 3, and styled with Tailwind CSS, MentalWealth combines modern web technologies to provide a seamless and intuitive user experience.
 
-## Setup
+## Features
+- **Daily Journaling:** Securely write and save your daily thoughts, experiences, and reflections.
+- **Mood Tracking:** Keep track of your mood patterns and identify triggers or trends over time.
+- **Resources:** Access to a curated list of mental health resources and articles.
 
-Make sure to install the dependencies:
 
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## 📫 Contact
+**LinkedIn:** For a quick response, [DM me on LinkedIn](https://www.linkedin.com/in/connor-deane-524483168). Let's connect and talk about sports, tech, and everything in between!
