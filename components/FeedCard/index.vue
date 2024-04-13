@@ -1,6 +1,6 @@
 <template>
   <section
-    class="relative w-40 h-40 bg-white rounded-md shadow-lg hover:shadow-xl flex flex-col items-center justify-center"
+    class="relative w-36 h-36 bg-white rounded-md shadow-lg hover:shadow-xl flex flex-col items-center justify-center cursor-pointer"
   >
     <div>
       <p class="capitalize text-lg font-medium">title</p>
