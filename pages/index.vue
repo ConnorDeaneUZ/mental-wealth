@@ -3,5 +3,7 @@
     <side-bar />
 
     <feed-container />
+
+    <journal-entry-modal />
   </div>
 </template>
