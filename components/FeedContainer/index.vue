@@ -1,10 +1,10 @@
 <template>
-  <div class="bg-[#f9f9f9] w-full flex space-x-8">
+  <div
+    class="bg-[#f9f9f9] p-12 w-full grid grid-cols-2 lg:grid-cols-4 h-full gap-8"
+  >
     <new-feed-card @click="openModal" />
     <div v-for="(item, index) in entries" :key="index">
       <feed-card />
-
-      <button @click="deletePost(item.id)">delete</button>
     </div>
 
     <!-- <input type="text" v-model="newMessage" />

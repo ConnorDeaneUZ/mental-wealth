@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-full">
+  <div class="flex">
     <side-bar />
 
     <feed-container />
