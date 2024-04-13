@@ -1,6 +1,6 @@
 <template>
   <div class="bg-[#f9f9f9] w-full flex space-x-8">
-    <new-feed-card />
+    <new-feed-card @click="openModal" />
     <div v-for="(item, index) in entries" :key="index">
       <feed-card />
 
@@ -13,6 +13,7 @@
 </template>
 
 <script setup lang="ts">
+import { useStore } from "~/store/useStore.ts";
 const supabase = useSupabaseClient();
 const entries = ref();
 
@@ -42,4 +43,9 @@ const insertData = async () => {
   newMessage.value = "";
   fetchData();
 };
+
+function openModal() {
+  const store = useStore();
+  store.showModal = true;
+}
 </script>
