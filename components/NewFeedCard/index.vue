@@ -1,6 +1,6 @@
 <template>
   <section
-    class="relative w-40 h-40 border-[1px] border-gray-300 border-dashed rounded-md flex flex-col items-center justify-center hover:bg-white text-gray-300 hover:text-black"
+    class="relative w-40 h-40 border-[1px] border-gray-300 border-dashed rounded-md flex flex-col items-center justify-center text-gray-300 cursor-pointer hover:shadow-lg"
   >
     <div
       class="flex flex-col items-center justify-center text-3xl border-[1px] border-dashed border-gray-300 p-4 rounded-full w-16 h-16 mb-4"

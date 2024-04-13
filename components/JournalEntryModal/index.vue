@@ -3,11 +3,23 @@
     <div class="fixed inset-0 z-[100] bg-black/75"></div>
 
     <div
-      class="fixed z-[1000] top-[200px] left-[200px] right-[200px] bottom-[200px] bg-white rounded-xl shadow-2xl"
-    ></div>
+      class="fixed z-[1000] top-[150px] left-[150px] right-[150px] bottom-[150px] bg-white rounded-xl shadow-2xl"
+    >
+      <button
+        @click="closeModal"
+        class="absolute right-4 top-4 bg-slate-400 h-8 w-8 rounded-full text-white"
+      >
+        X
+      </button>
+    </div>
   </section>
 </template>
 
 <script setup lang="ts">
-console.log("test");
+import { useStore } from "~/store/useStore.ts";
+
+function closeModal() {
+  const store = useStore();
+  store.showModal = false;
+}
 </script>
