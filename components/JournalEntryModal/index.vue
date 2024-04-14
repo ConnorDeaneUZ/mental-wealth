@@ -12,18 +12,24 @@
         X
       </button>
 
-      <div class="bg-red-500 flex justify-center h-full">
+      <div class="flex justify-center h-full flex flex-col">
+        <input
+          type="input"
+          placeholder="Title"
+          class="focus:outline-none resize-none mb-8"
+          v-model="heading"
+        />
         <textarea
           placeholder="What's on your mind?..."
           class="h-full w-full focus:outline-none resize-none"
           type="text"
-          v-model="newMessage"
+          v-model="message"
         />
       </div>
       <div class="w-full flex justify-end">
         <button
-          class="bg-green-400 px-8 py-2 rounded-3xl uppercase font-bold text-white shadow-lg"
-          @click="insertData(newMessage)"
+          class="bg-green-400 px-8 py-2 rounded-3xl uppercase font-bold text-white hover:shadow-lg duration-300"
+          @click="buildMessage"
         >
           post
         </button>
@@ -36,11 +42,22 @@
 import { useStore } from "~/store/useStore";
 import { useJournal } from "~/composables/useJournal";
 
-const newMessage = ref();
 const { insertData } = useJournal();
 
 function closeModal() {
   const store = useStore();
   store.showModal = false;
+}
+
+const builtMessage = ref();
+const heading = ref();
+const message = ref();
+
+function buildMessage() {
+  builtMessage.value = {
+    title: heading.value,
+    body: message.value,
+  };
+  insertData(builtMessage.value);
 }
 </script>

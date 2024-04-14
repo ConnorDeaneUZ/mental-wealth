@@ -2,13 +2,16 @@
   <div class="flex">
     <side-bar />
 
-    <feed-container />
+    <div>
+      <feed-date />
+      <feed-container v-if="store.showFeed" />
+    </div>
 
     <journal-entry-modal v-if="store.showModal" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { useStore } from "~/store/useStore.ts";
+import { useStore } from "~/store/useStore";
 const store = useStore();
 </script>

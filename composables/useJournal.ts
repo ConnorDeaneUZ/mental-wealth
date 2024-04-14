@@ -22,11 +22,11 @@ export function useJournal() {
     };
 
     const newMessage = ref();
-    const insertData = async (item: string) => {
+    const insertData = async (item: object) => {
         console.log('post')
         const { data, error } = await supabase
             .from("journal")
-            .insert([{ entry: item }]);
+            .insert([{ entry: item.body, heading: item.title }]);
 
         store.showModal = false
         fetchData();
