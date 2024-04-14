@@ -11,12 +11,19 @@
       >
         X
       </button>
+
+      <input type="text" v-model="newMessage" />
+      <button @click="insertData(newMessage)">post</button>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { useStore } from "~/store/useStore.ts";
+import { useStore } from "~/store/useStore";
+import { useJournal } from "~/composables/useJournal";
+
+const newMessage = ref();
+const { insertData } = useJournal();
 
 function closeModal() {
   const store = useStore();
