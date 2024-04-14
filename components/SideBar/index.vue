@@ -7,18 +7,54 @@
       <img class="h-28" src="/logo.png" />
 
       <div class="mt-8 text-center space-y-8">
-        <p class="font-bold bg-green-400 text-white px-12 py-2 rounded-3xl">
-          Journal
-        </p>
-        <p class="font-bold bg-green-400 text-white px-12 py-2 rounded-3xl">
-          Mood Tracker
-        </p>
+        <button
+          v-for="(section, index) in sections"
+          class="font-bold w-full text-white py-2 rounded-3xl duration-300"
+          :class="getActive(index) ? 'bg-green-400 text-white' : 'text-black'"
+          @click="updateSection(section.id, index)"
+        >
+          {{ section.title }}
+        </button>
       </div>
     </div>
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useStore } from "~/store/useStore";
+
+const sections = ref();
+
+sections.value = [
+  {
+    title: "Journal",
+    id: 1,
+  },
+  {
+    title: "Mood tracker",
+    id: 2,
+  },
+];
+
+const activeIndex = ref(0);
+function updateSection(id: number, index: number) {
+  const store = useStore();
+
+  activeIndex.value = index;
+
+  if (id == 1) {
+    store.showFeed = true;
+    store.showMood = false;
+  } else if (id == 2) {
+    store.showMood = true;
+    store.showFeed = false;
+  }
+}
+
+function getActive(index: number) {
+  return index === activeIndex.value;
+}
+</script>
 
 <style>
 .right-side-shadow {
