@@ -22,7 +22,7 @@
       </div>
       <div class="w-full flex justify-end">
         <button
-          class="bg-green-400 px-8 py-2 rounded-3xl uppercase font-bold text-white shadow-lg"
+          class="bg-green-400 px-8 py-2 rounded-3xl uppercase font-bold text-white hover:shadow-lg duration-300"
           @click="insertData(newMessage)"
         >
           post
