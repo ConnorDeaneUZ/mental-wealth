@@ -4,12 +4,12 @@
     <div
       class="relative z-10 h-full w-[300px] right-side-shadow flex flex-col items-center"
     >
-      <img class="h-28" src="/logo.png" />
+    <img class="h-28" src="/public/mental-wealth.svg" alt="">
 
       <div class="mt-8 text-center space-y-8">
         <button
           v-for="(section, index) in sections"
-          class="font-bold w-full text-white py-2 rounded-3xl duration-300"
+          class="font-bold w-full py-2 rounded-3xl duration-300"
           :class="getActive(index) ? 'bg-green-400 text-white' : 'text-black'"
           @click="updateSection(section.id, index)"
         >

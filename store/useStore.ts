@@ -5,7 +5,8 @@ export const useStore = defineStore({
     state: () => ({
         showModal: false,
         showFeed: true,
-        showMood: false
+        showMood: false,
+        entryId: ''
     }),
 
 });
