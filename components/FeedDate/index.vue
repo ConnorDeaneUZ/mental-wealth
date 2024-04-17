@@ -9,7 +9,7 @@
     </div>
     <div>
       <p class="font-thin italic">"Do or do not, there is no try."</p>
-      <span class="italic font-thin">- Yodo</span>
+      <span class="italic font-thin">- Yoda</span>
     </div>
   </div>
 </template>

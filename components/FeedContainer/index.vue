@@ -2,9 +2,9 @@
   <div class="w-full h-screen p-12 flex space-x-8">
     <new-feed-card @click="openModal" />
     <div v-for="(item, index) in entries" :key="index">
-      <feed-card @click="openModal()" :heading="item.heading" />
 
-      <button @click="deletePost(item.id)">delete</button>
+      <feed-card @click="openModal(item.id)" :heading="item.heading" />
+
     </div>
   </div>
 </template>
@@ -15,8 +15,9 @@ import { useJournal } from "~/composables/useJournal";
 
 const { entries, deletePost } = useJournal();
 
-function openModal() {
+function openModal(id: string) {
   const store = useStore();
+  store.entryId = id
   store.showModal = true;
 }
 </script>

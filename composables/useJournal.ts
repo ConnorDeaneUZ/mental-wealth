@@ -1,38 +1,54 @@
+import { ref, onMounted } from 'vue';
 import { useStore } from "~/store/useStore";
 
-const entries = ref()
+
+const entries = ref();
+
 export function useJournal() {
     const supabase = useSupabaseClient();
-    const store = useStore()
+    const store = useStore();
+
 
     const fetchData = async () => {
-        console.log('fetch')
-        let data = await supabase.from("journal").select();
-        entries.value = data.data
+        console.log('Fetching all entries');
+        let { data, error } = await supabase.from("journal").select();
+        entries.value = data;
 
-    }
+    };
 
-    const deletePost = async (item: number) => {
-        console.log('delete')
+    const fetchSingle = async (id: string) => {
+        let { data, error } = await supabase.from("journal").select().eq('id', id);
+
+        if (error) {
+            console.error('Error fetching single entry:', error);
+            return null;
+        } else {
+            console.log('Fetched single entry:', data[0]);
+            return data[0];
+        }
+    };
+
+    const deletePost = async (itemId: number) => {
+        console.log('Deleting entry');
         const { data, error } = await supabase
             .from("journal")
             .delete()
-            .match({ id: item });
+            .match({ id: itemId });
+        store.showModal = false;
+
         fetchData();
     };
 
-    const newMessage = ref();
-    const insertData = async (item: object) => {
-        console.log('post')
+    const insertData = async (item: { body: string, title: string }) => {
+        console.log('Inserting new entry');
         const { data, error } = await supabase
             .from("journal")
             .insert([{ entry: item.body, heading: item.title }]);
-
-        store.showModal = false
+        store.showModal = false;
         fetchData();
     };
 
-    onMounted(fetchData)
+    onMounted(fetchData);
 
-    return { entries, deletePost, insertData }
+    return { entries, deletePost, insertData, fetchSingle };
 }
