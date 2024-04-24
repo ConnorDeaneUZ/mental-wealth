@@ -1,11 +1,11 @@
 <template>
   <section
-    class="relative w-36 h-36 bg-white rounded-md shadow-md hover:shadow-xl duration-300 flex flex-col items-center justify-center cursor-pointer"
+    class="relative flex flex-col items-center justify-center w-48 h-48 duration-300 bg-white rounded-md shadow-md cursor-pointer hover:shadow-xl"
   >
     <div>
-      <p class="capitalize text-lg text-center font-medium">{{ heading }}</p>
+      <p class="text-lg font-medium text-center capitalize">{{ heading }}</p>
     </div>
-    <div class="absolute bottom-0 bg-green-400 w-full h-2 rounded-b-md"></div>
+    <div class="absolute bottom-0 bg-[#123524] w-full h-2 rounded-b-md"></div>
   </section>
 </template>
 
