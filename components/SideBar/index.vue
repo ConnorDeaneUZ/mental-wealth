@@ -1,16 +1,16 @@
 <template>
-  <section class="flex hidden lg:flex h-screen">
-    <div class="relative bg-green-400 h-full w-[16px]"></div>
+  <section class="flex hidden h-screen bg-white lg:flex">
+    <div class="relative bg-[#123524] h-full w-[16px]"></div>
     <div
-      class="relative z-10 h-full w-[300px] right-side-shadow flex flex-col items-center"
+      class="relative z-10 h-full w-[200px] right-side-shadow flex flex-col items-center"
     >
     <img class="h-28" src="/public/mental-wealth.svg" alt="">
 
-      <div class="mt-8 text-center space-y-8">
+      <div class="mt-8 space-y-8 text-center">
         <button
           v-for="(section, index) in sections"
-          class="font-bold w-full py-2 rounded-3xl duration-300"
-          :class="getActive(index) ? 'bg-green-400 text-white' : 'text-black'"
+          class="w-full py-2 font-bold duration-300 rounded-3xl"
+          :class="getActive(index) ? 'bg-[#123524] text-white' : 'text-black'"
           @click="updateSection(section.id, index)"
         >
           {{ section.title }}

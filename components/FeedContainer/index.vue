@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-screen p-12 flex space-x-8">
+  <div class="flex w-full h-screen p-12 space-x-8">
     <new-feed-card @click="openModal" />
     <div v-for="(item, index) in entries" :key="index">
 
